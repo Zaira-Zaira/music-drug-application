@@ -10,6 +10,7 @@ use Spotify;
 use SpotifySeed;
 
 
+
 class Playlist extends Controller
 {
 
@@ -19,4 +20,11 @@ class Playlist extends Controller
         Session::put('userPlaylists', $playlists);
         return view('playlists', compact('playlists'));
    }
+
+    public function getPlaylistItem($playlistId){
+        $res = Spotify::playlistTracks($playlistId)->get();
+        $playlistTracks = $res['items'];
+        dd($playlistTracks);
+        return view('playlistTracks', compact('playlistTracks'));
+    }
 }

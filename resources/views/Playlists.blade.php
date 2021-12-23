@@ -30,7 +30,7 @@
     <section class="userPlaylistsContainer">
         <div class="playlists">
             @foreach ($playlists as $playlist)
-            <a href="">
+            <a href="{{ route('playlists.item', ['id' => $playlist['id']])}}">
                 <div class="playlistItem">
                     <p>{{$playlist['name']}}</p>
                 </div>

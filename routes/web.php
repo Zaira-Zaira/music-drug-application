@@ -24,3 +24,4 @@ Route::get('/albums', function(){
 Route::get('/albums',  [Album::class, 'show'])->name('albums');
 Route::get('/albums/{id}/tracks',  [Album::class, 'showAlbumTracks'])->name('album.tracks');
 Route::get('/playlists',  [Playlist::class, 'getAllPlaylist'])->name('playlists');
+Route::get('/playlist/{id}',  [Playlist::class, 'getPlaylistItem'])->name('playlists.item');
