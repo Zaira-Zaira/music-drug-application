@@ -18,21 +18,60 @@
      }
      .playlists{
          width: 100%;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         text-align: center;
      }
      a{
          text-decoration: none;
          color: #f5dede;
      }
+     .playlistItem{
+         width: 15rem;
+         height: 15rem;
+         background-color: #424141;
+         color: #e4d8d8;
+         border-radius: 1rem;
+     }
+     .playlistName{
+         padding-top: 50%;
+     }
+       nav ul{
+          display: flex;
+          justify-content: space-between;
+          max-width: 40rem;
+        }
+        nav ul li a{
+            color: #e4d8d8;
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+        nav ul li{
+            list-style: none;
+        }
+        h1{
+            text-align: center;
+            padding: 4rem 0;
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Bibliotheque</a></li>
+            <li><a href="{{ route('albums')}}">Albums</a></li>
+            <li><a href="{{ route('userPlaylists')}}">Playlist</a></li>
+        </ul>
+    </nav>
     <h1>Playlists</h1>
     <section class="userPlaylistsContainer">
         <div class="playlists">
             @foreach ($playlists as $playlist)
             <a href="{{ route('playlists.item', ['id' => $playlist['id']])}}">
                 <div class="playlistItem">
-                    <p>{{$playlist['name']}}</p>
+                    <p class="playlistName">{{$playlist['name']}}</p>
                 </div>
             </a>
             @endforeach

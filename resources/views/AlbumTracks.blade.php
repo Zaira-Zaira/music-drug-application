@@ -59,7 +59,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Bibliotheque</a></li>
             <li><a href="{{ route('albums')}}">Albums</a></li>
-            <li><a href="#">Playlist</a></li>
+            <li><a href="{{ route('userPlaylists')}}">Playlist</a></li>
         </ul>
     </nav>
     <section class="albumTrackContainer">
@@ -88,6 +88,7 @@
         </thead>
         <tbody>
             @foreach ($tracks as $item)
+           <a href="http://">
             <tr>
                 <td>{{$loop->index}}</td>
                 <td>{{$item['name']}}</td>
@@ -95,6 +96,7 @@
                 <td>Time</td>
                 <td><a href="#">...</a></td>
             </tr>
+            </a> 
             @endforeach
         </tbody>
     </table>

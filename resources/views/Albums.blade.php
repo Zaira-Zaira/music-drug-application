@@ -66,7 +66,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Bibliotheque</a></li>
             <li><a href="{{ route('albums')}}">Albums</a></li>
-            <li><a href="#">Playlist</a></li>
+            <li><a href="{{ route('userPlaylists')}}">Playlist</a></li>
         </ul>
     </nav>
     <h2>Albums populaires</h2>
